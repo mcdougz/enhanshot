@@ -7,3 +7,12 @@ html, body{
 .wrapper {
 	position: relative;
 }
+
+.row {
+	display: flex;
+}
+
+.row img {
+	flex: 1;
+	max-width: 25vw;
+}
