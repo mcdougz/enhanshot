@@ -140,9 +140,10 @@ header a {
   color: white;
   padding-top: 3rem;
   padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -150,26 +151,26 @@ header a {
   flex: 0 1 auto;
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .col-6 {
   flex-basis: 50%;
   position: relative;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .col-12 {
   flex-basis: 100%;
   position: relative;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .desc {
   text-align: center;
   color: white;
   padding: 2rem;
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 #toast {
   position: fixed;
   bottom: 5vh;
@@ -182,7 +183,7 @@ header a {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* line 97, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 .hide {
   display: none;
 }
