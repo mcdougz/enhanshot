@@ -94,3 +94,6 @@ process(img);
 Usually, some processing about images or photos could be heavy and memory-consuming process, and such heavy plugin could lower the usability of clients sides.
 
 However, thanks to [Web Worker API](https://developer.mozilla.org/ja/docs/Web/API/Worker), a heavy converting process is done under background, therefore it does not cost too much on user experiences.
+
+# Copyright and license
+Code and documentation copyright Kenju Wagatsuma. Code released under [the MIT license](https://github.com/KENJU/enhanshot/blob/master/LICENSE)
