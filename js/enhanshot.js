@@ -1,5 +1,8 @@
-function process(img, x, y){
+function process(img){
 
+	// effect set in dataset
+	var effect = img.dataset.effect;
+	// create canvas
 	var canvas = document.createElement("canvas");
 	canvas.width = img.width;
 	canvas.height = img.height;
@@ -13,7 +16,10 @@ function process(img, x, y){
 
 	// send the pixels to a worker thread
 	var worker = new Worker('js/worker.js');
-	var obj = { pixels: pixels }
+	var obj = { 
+		pixels: pixels,
+		effects: effect
+	}
 	worker.postMessage(obj);
 
 	// get message from the worker thread

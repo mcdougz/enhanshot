@@ -20,6 +20,9 @@ html, body{
 	background: rgb(33,33,33);
 	font-family: 'Roboto', sans-serif;
 }
+h1, h2, h3 {
+	color: white;
+}
 header {
 	background: #bf360c;
 	padding: 2rem;
@@ -29,10 +32,6 @@ header {
 	z-index: 5;
 	top: 0;
 	box-shadow: $box-shadow;
-	h1 {
-		font-size: xx-large;
-		padding-bottom: 1rem;
-	}
 	a {
 		color: rgb(33,33,33);
 		text-decoration: none;
@@ -59,6 +58,12 @@ header {
 	background: white;
 	color: rgb(33,33,33);
 }
+.lead {
+	font-size: xx-large;
+	color: white;
+	padding-top: 3rem;
+	padding-bottom: 1rem;
+}
 .row {
 	display: flex;
 	flex-wrap: wrap;
@@ -69,13 +74,17 @@ header {
 	flex-basis: 50%;
 	position: relative;
 }
+.col-12 {
+	flex-basis: 100%;
+	position: relative;
+}
 .desc {
 	text-align: center;
 	color: white;
 	padding: 2rem;
 }
 #toast {
-	position: absolute;
+	position: fixed;
 	bottom: 5vh;
 	right: 5vw;
 	background: white;

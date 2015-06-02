@@ -85,6 +85,11 @@ html, body {
 }
 
 /* line 23, ../sass/screen.scss */
+h1, h2, h3 {
+  color: white;
+}
+
+/* line 26, ../sass/screen.scss */
 header {
   background: #bf360c;
   padding: 2rem;
@@ -95,27 +100,22 @@ header {
   top: 0;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-/* line 32, ../sass/screen.scss */
-header h1 {
-  font-size: xx-large;
-  padding-bottom: 1rem;
-}
-/* line 36, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 header a {
   color: #212121;
   text-decoration: none;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 #link {
   display: flex;
 }
-/* line 43, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 #link li {
   padding: 2px;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 #convertBtn {
   background: none;
   border: 8px solid white;
@@ -128,13 +128,21 @@ header a {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 #convertBtn:hover, #convertBtn:active {
   background: white;
   color: #212121;
 }
 
-/* line 62, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
+.lead {
+  font-size: xx-large;
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+/* line 67, ../sass/screen.scss */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -142,22 +150,28 @@ header a {
   flex: 0 1 auto;
 }
 
-/* line 68, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 .col-6 {
   flex-basis: 50%;
   position: relative;
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
+.col-12 {
+  flex-basis: 100%;
+  position: relative;
+}
+
+/* line 81, ../sass/screen.scss */
 .desc {
   text-align: center;
   color: white;
   padding: 2rem;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 #toast {
-  position: absolute;
+  position: fixed;
   bottom: 5vh;
   right: 5vw;
   background: white;
@@ -168,7 +182,7 @@ header a {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 .hide {
   display: none;
 }

@@ -43,15 +43,34 @@ There are three files in [dist](https://github.com/KENJU/enhanshot/tree/master/d
 
 You do not have to load `dist/worker.min.js` because enhanshot.min.js load this file.
 
-## 2. Add Class Name `convert-img` to `<img>`
+## 2. Select Effect
 
-Just add `class="convert-img"` to image tags which you want to enhance.
+Firstly, just add `class="convert-img"` to image tags which you want to enhance.
+
+And then, please add `data-effect="???"` attribute to the same img tag.
 
 ```html
 
-<img src="img/food1.jpg" alt="" class="convert-img">
+<img src="img/food1.jpg" alt="" data-effect="enhance" class="convert-img">
 
 ```
+
+### Available Effects
+#### enhance
+Basic enhancement for all images from foods, portraits to natures.
+
+#### grayscale
+Coming soon...
+
+#### sepia
+Coming soon...
+
+#### Negative-Positive
+Coming soon...
+
+#### Blur
+Coming soon...
+
 
 ## 3. Call `process(img)` function
 
