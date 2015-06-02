@@ -7,7 +7,7 @@ Enhanshot.js is a javascript library for enhancing images with lightweight and e
 
 ## Sample
 
-[Enhanshot.js Sample Page](http://KENJU.github.io/enhanshotjs)
+[Enhanshot.js Sample Page](http://KENJU.github.io/enhanshot)
 
 # Install
 
