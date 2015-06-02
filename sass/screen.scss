@@ -4,6 +4,9 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,100italic);
+
+$box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 * {
 	box-sizing: border-box;	
@@ -15,6 +18,7 @@ html, body{
 	margin: 0;
 	padding: 0;
 	background: rgb(33,33,33);
+	font-family: 'Roboto', sans-serif;
 }
 header {
 	background: #bf360c;
@@ -24,49 +28,63 @@ header {
 	width: 100%;
 	z-index: 5;
 	top: 0;
-	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	font-size: xx-small;
+	box-shadow: $box-shadow;
+	h1 {
+		font-size: xx-large;
+		padding-bottom: 1rem;
+	}
+	a {
+		color: rgb(33,33,33);
+		text-decoration: none;
+	}
 }
-#link a{
-	color: white;
+#link {
+	display: flex;
+	li {
+		padding: 2px;
+  	}
 }
 #convertBtn {
 	background: none;
-	border: 8px solid #e64a19;
+	border: 8px solid white;
 	font-weight: bold;
 	font-size: xx-large;
 	padding: 2.4rem;
-	color: #e64a19;
+	color: white;
 	margin: 4vh auto;
 	display: block;
 	transition: all 0.2s ease-in-out;
 }
 #convertBtn:hover, #convertBtn:active{
-	background: #e64a19;
-	color: white;
-}
-.wrapper {
-	position: relative;
-}
-.menu-list {
-
+	background: white;
+	color: rgb(33,33,33);
 }
 .row {
 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	flex: 0 1 auto;
 }
-
-.row img {
-	flex: 1;
-}
-.row-right, .row-left {
+.col-6 {
+	flex-basis: 50%;
 	position: relative;
 }
 .desc {
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-	padding: 1rem;
+	text-align: center;
 	color: white;
-	background: rgba(0,0,0,0.7);
+	padding: 2rem;
+}
+#toast {
+	position: absolute;
+	bottom: 5vh;
+	right: 5vw;
+	background: white;
+	color: rgb(33,33,33);
+	border-radius: 2px;
+	padding: 1rem 1.2rem;
 	font-weight: bold;
+	box-shadow: $box-shadow;
+}
+.hide {
+	display: none;
 }

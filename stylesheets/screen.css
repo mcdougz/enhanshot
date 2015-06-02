@@ -2,6 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,100italic);
 /* line 5, ../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -67,12 +68,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 11, ../sass/screen.scss */
+/* line 14, ../sass/screen.scss */
 html, body {
   width: 100vw;
   height: 100vh;
@@ -80,9 +81,10 @@ html, body {
   margin: 0;
   padding: 0;
   background: #212121;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 23, ../sass/screen.scss */
 header {
   background: #bf360c;
   padding: 2rem;
@@ -92,60 +94,81 @@ header {
   z-index: 5;
   top: 0;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  font-size: xx-small;
+}
+/* line 32, ../sass/screen.scss */
+header h1 {
+  font-size: xx-large;
+  padding-bottom: 1rem;
+}
+/* line 36, ../sass/screen.scss */
+header a {
+  color: #212121;
+  text-decoration: none;
 }
 
-/* line 30, ../sass/screen.scss */
-#link a {
-  color: white;
+/* line 41, ../sass/screen.scss */
+#link {
+  display: flex;
+}
+/* line 43, ../sass/screen.scss */
+#link li {
+  padding: 2px;
 }
 
-/* line 33, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 #convertBtn {
   background: none;
-  border: 8px solid #e64a19;
+  border: 8px solid white;
   font-weight: bold;
   font-size: xx-large;
   padding: 2.4rem;
-  color: #e64a19;
+  color: white;
   margin: 4vh auto;
   display: block;
   transition: all 0.2s ease-in-out;
 }
 
-/* line 44, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 #convertBtn:hover, #convertBtn:active {
-  background: #e64a19;
-  color: white;
+  background: white;
+  color: #212121;
 }
 
-/* line 48, ../sass/screen.scss */
-.wrapper {
-  position: relative;
-}
-
-/* line 54, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .row {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 0 1 auto;
 }
 
-/* line 58, ../sass/screen.scss */
-.row img {
-  flex: 1;
-}
-
-/* line 61, ../sass/screen.scss */
-.row-right, .row-left {
+/* line 68, ../sass/screen.scss */
+.col-6 {
+  flex-basis: 50%;
   position: relative;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .desc {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding: 1rem;
+  text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+}
+
+/* line 77, ../sass/screen.scss */
+#toast {
+  position: absolute;
+  bottom: 5vh;
+  right: 5vw;
+  background: white;
+  color: #212121;
+  border-radius: 2px;
+  padding: 1rem 1.2rem;
   font-weight: bold;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* line 88, ../sass/screen.scss */
+.hide {
+  display: none;
 }

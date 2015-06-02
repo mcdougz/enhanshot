@@ -27,12 +27,16 @@ function process(img, x, y){
 		var new_pixels = e.data.pixels;
 		context.putImageData(new_pixels, 0, 0);
 		img.src = canvas.toDataURL();
-		console.log(img.src);
 	}
 }
 
 $('#convertBtn').on('click', function(e){
-	Array.prototype.forEach.call(document.querySelectorAll('.row-right img'), function(node){
+	Array.prototype.forEach.call(document.querySelectorAll('.convert-img'), function(node){
 		process(node);
 	});
+	// toast for showing error message
+	var toast = $('#toast');
+	toast.fadeIn('fast');
+	toast.delay(2400);
+	toast.fadeOut('slow');
 });
