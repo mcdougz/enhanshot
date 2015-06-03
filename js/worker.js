@@ -83,8 +83,8 @@ Effects
 Worker.enhance = function(pix){
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		pix[i] =　pix[i] * 1.24; // red
-		pix[i+1] =　pix[i+1] * 1.24; // green
-		pix[i+2] =　pix[i+2] * 1.24; // blue
+		pix[i+1] =　pix[i+1] * 1.33; // green
+		pix[i+2] =　pix[i+2] * 1.21; // blue
 	}
 };
 // grayscale

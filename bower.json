@@ -1,0 +1,27 @@
+{
+  "name": "enhanshotjs",
+  "version": "1.0.2",
+  "homepage": "https://github.com/KENJU/enhanshot",
+  "description": "javascript library for enhancing and retouching images with canvas and Worker API",
+  "main": "js/enchanshot.js",
+  "keywords": [
+    "canvas",
+    "photo",
+    "retouching",
+    "Web",
+    "Worker",
+    "API",
+    "images"
+  ],
+  "authors": [
+    "Kenju Wagatsuma"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
