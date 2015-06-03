@@ -1,4 +1,5 @@
-function process(img){
+Enhanshot = {};
+Enhanshot.process = function(img){
 
 	// effect set in dataset
 	var effect = img.dataset.effect;
@@ -34,15 +35,20 @@ function process(img){
 		context.putImageData(new_pixels, 0, 0);
 		img.src = canvas.toDataURL();
 	}
-}
+};
 
-$('#convertBtn').on('click', function(e){
-	Array.prototype.forEach.call(document.querySelectorAll('.convert-img'), function(node){
-		process(node);
-	});
+Enhanshot.showToast = function(){
 	// toast for showing error message
 	var toast = $('#toast');
 	toast.fadeIn('fast');
 	toast.delay(2400);
 	toast.fadeOut('slow');
+};
+
+$('#convertBtn').on('click', function(e){
+	Array.prototype.forEach.call(document.querySelectorAll('.convert-img'), function(node){
+		Enhanshot.process(node);
+	});
+	Enhanshot.showToast();
 });
+
