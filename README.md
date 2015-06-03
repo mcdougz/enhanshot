@@ -55,23 +55,6 @@ And then, please add `data-effect="???"` attribute to the same img tag.
 
 ```
 
-### Available Effects
-#### enhance
-Basic enhancement for all images from foods, portraits to natures.
-
-#### grayscale
-Coming soon...
-
-#### sepia
-Coming soon...
-
-#### Negative-Positive
-Coming soon...
-
-#### Blur
-Coming soon...
-
-
 ## 3. Call `process(img)` function
 
 ### Default
@@ -104,6 +87,76 @@ var img = $('#convert-target');
 process(img);
 
 ```
+
+##  Available Effects
+### enhance
+Basic enhancement for all images from foods, portraits to natures.
+<img src="img/enhance.png" alt="enhance">
+
+### grayscale
+Make images to grayscale tone. Processing altorhitm is based on NTSC. For the detail please see the [Wiki page about Grayscale, "Luma coding in video systems"](http://en.wikipedia.org/wiki/Grayscale).
+
+The human eye is bad at seeing red and blue, so here red and blue color values are de-emphasized.
+
+```js
+// calculated from NTSC
+var grayscale = red * .29 + green * .58 + blue * .11;
+```
+<img src="img/grayscale.png" alt="grayscale">
+
+### sepia
+Make images to sepia tone.
+
+```js
+var sepia = red * 1.07 + green * .74 + blue * .43;
+```
+<img src="img/sepia.png" alt="sepia">
+
+### Negative-Positive
+In negative-positive effect, each rgb values are simply converted.
+
+```js
+var red = 255 - red_original;
+var blue = 255 - blue_original;
+var green = 255 - green_original;
+```
+
+<img src="img/negaposi.png" alt="negaposit">
+
+### Blur
+Coming soon...
+
+### Mirror Vertically
+Coming soon...
+
+### Mirror Horizontally
+Coming soon...
+
+### Opacity
+In the default script, alpha value is set to 50%.
+
+```js
+var alpha = alpha_original * .5;
+```
+
+<img src="img/opacity.png" alt="opacity">
+
+### Brighten
+Each rgb values are slighly enhanced.
+
+```js
+var red += 5;
+var blue += 5;
+var green += 5;
+```
+
+<img src="img/brighten.png" alt="brighten">
+
+### Threshold
+Make each pixels of a image only into black or white.
+
+<img src="img/threshold.png" alt="threshold">
+
 
 # FAQ
 
