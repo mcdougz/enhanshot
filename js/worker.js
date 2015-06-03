@@ -118,6 +118,9 @@ Worker.blur = function(pix, width, height){
 };
 Worker.mirrorVertical = function(pix, width, height){
 	// TODO: mirror vertical alrgorithum
+	for (var i = 0; i < width; i++){
+		
+	}
 };
 Worker.mirrorHorizontal = function(pix, width, height){
 	// TODO: mirror horizontal alrgorithum

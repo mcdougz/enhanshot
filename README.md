@@ -2,6 +2,34 @@
 
 <a href="http://KENJU.github.io/enhanshot"><img src="img/screenshot.png" alt="threshold"></a>
 
+## Index
+- [About](https://github.com/KENJU/enhanshot#about)
+- [Install](https://github.com/KENJU/enhanshot#install)
+	- [Download ZIP file](https://github.com/KENJU/enhanshot#download-zip-file)
+	- [Clone Github Repository](https://github.com/KENJU/enhanshot#clone-github-repository)
+	- [Via Bower](https://github.com/KENJU/enhanshot#via-bower)
+- [Usage](https://github.com/KENJU/enhanshot#usage)
+	- [1. Import Script Files](https://github.com/KENJU/enhanshot#1-import-script-files)
+	- [2. Select Effect](https://github.com/KENJU/enhanshot#2-select-effect)
+	- [3. Call Function](https://github.com/KENJU/enhanshot#2-call-function)
+- [Available Effects](https://github.com/KENJU/enhanshot#available-effects)
+	- [enhance](https://github.com/KENJU/enhanshot#enhance)
+	- [grayscale](https://github.com/KENJU/enhanshot#grayscale)
+	- [sepia](https://github.com/KENJU/enhanshot#sepia)
+	- [Negative-Positive](https://github.com/KENJU/enhanshot#negative-positive)
+	- [Blur](https://github.com/KENJU/enhanshot#blur)
+	- [Mirror Vertically](https://github.com/KENJU/enhanshot#mirror-vertically)
+	- [Mirror Horizontally](https://github.com/KENJU/enhanshot#mirror-horizontally)
+	- [Opacity](https://github.com/KENJU/enhanshot#opacity)
+	- [Brighten](https://github.com/KENJU/enhanshot#brighten)
+	- [Threshold](https://github.com/KENJU/enhanshot#threshold)
+	- [Hue Rotation](https://github.com/KENJU/enhanshot#hue-rotation)
+	- [Saturation](https://github.com/KENJU/enhanshot#saturation)
+	- [Contrast](https://github.com/KENJU/enhanshot#contrast)
+- [FAQ](https://github.com/KENJU/enhanshot#faq)
+- [Contact](https://github.com/KENJU/enhanshot#contact)
+- [Copyright and License](https://github.com/KENJU/enhanshot#copyright-and-license)
+
 ## What and Why
 
 Enhanshot.js is a javascript library for enhancing images with lightweight and easy way. So far there is only one action for enhancing image, I am going to add many enhance functions as well as Instagram or Tumblr.
@@ -32,6 +60,14 @@ You can also install Enhanshot.js through bower. Simply type below command.
 
 ```bash
 $ bower install enhanshot
+```
+
+## Via NPM
+
+You can also install via npm.
+
+```bash
+$ npm install enhanshotjs
 ```
 
 # Usage
@@ -93,7 +129,7 @@ And then, please add `data-effect="???"` attribute to the same img tag.
 	- `grayscale`
 	- `sepia`
 
-## 3. Call `process(img)` function
+## 3. Call Function
 
 ### Default
 
@@ -353,7 +389,7 @@ However, thanks to [Web Worker API](https://developer.mozilla.org/ja/docs/Web/AP
 ### A. In below simple 3 steps
 1. Creates empty canvas
 2. Processes in worker thread because this process is heavy
-3. Draw enhanced canvas onto the image
+3. Draws enhanced canvas onto the image
 
 # Contact
 
