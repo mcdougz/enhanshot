@@ -1,13 +1,17 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
+/*==============================================
+Import
+==============================================*/
 @import "compass/reset";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,100italic);
 
+/*==============================================
+Variables
+==============================================*/
 $box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+/*==============================================
+General
+==============================================*/
 * {
 	box-sizing: border-box;	
 }
@@ -23,15 +27,24 @@ html, body{
 h1, h2, h3 {
 	color: white;
 }
+
+/*==============================================
+Main
+==============================================*/
 header {
+	display: flex;
 	background: #bf360c;
+	position: fixed;
 	padding: 2rem;
 	color: white;
-	height: 16vh;
+	height: 8vh;
 	width: 100%;
 	z-index: 5;
 	top: 0;
 	box-shadow: $box-shadow;
+	h1 {
+		flex: 5;
+	}
 	a {
 		color: rgb(33,33,33);
 		text-decoration: none;
@@ -40,7 +53,7 @@ header {
 #link {
 	display: flex;
 	li {
-		padding: 2px;
+		padding-left: 1rem;
   	}
 }
 #convertBtn {
@@ -50,7 +63,7 @@ header {
 	font-size: xx-large;
 	padding: 2.4rem;
 	color: white;
-	margin: 4vh auto;
+	margin: 16vh auto 4vh auto;
 	display: block;
 	transition: all 0.2s ease-in-out;
 }
@@ -58,13 +71,10 @@ header {
 	background: white;
 	color: rgb(33,33,33);
 }
-.lead {
-	font-size: xx-large;
-	color: white;
-	padding-top: 3rem;
-	padding-bottom: 1rem;
-	padding-left: 1rem;
-}
+
+/*==============================================
+Grid
+==============================================*/
 .row {
 	display: flex;
 	flex-wrap: wrap;
@@ -79,10 +89,20 @@ header {
 	flex-basis: 100%;
 	position: relative;
 }
+/*==============================================
+Parts
+==============================================*/
 .desc {
 	text-align: center;
 	color: white;
 	padding: 2rem;
+}
+.lead {
+	font-size: xx-large;
+	color: white;
+	padding-top: 3rem;
+	padding-bottom: 1rem;
+	padding-left: 1rem;
 }
 #toast {
 	position: fixed;
@@ -95,6 +115,11 @@ header {
 	font-weight: bold;
 	box-shadow: $box-shadow;
 }
-.hide {
-	display: none;
-}
+
+/*==============================================
+Utils
+==============================================*/
+.hide { display: none; }
+.right { text-align: right; }
+.left { text-align: left; }
+.center { text-align: center; }

@@ -1,7 +1,6 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*==============================================
+Import
+==============================================*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,100italic);
 /* line 5, ../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
@@ -68,12 +67,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 11, ../sass/screen.scss */
+/*==============================================
+Variables
+==============================================*/
+/*==============================================
+General
+==============================================*/
+/* line 15, ../sass/screen.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 html, body {
   width: 100vw;
   height: 100vh;
@@ -84,38 +89,47 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 27, ../sass/screen.scss */
 h1, h2, h3 {
   color: white;
 }
 
-/* line 26, ../sass/screen.scss */
+/*==============================================
+Main
+==============================================*/
+/* line 34, ../sass/screen.scss */
 header {
+  display: flex;
   background: #bf360c;
+  position: fixed;
   padding: 2rem;
   color: white;
-  height: 16vh;
+  height: 8vh;
   width: 100%;
   z-index: 5;
   top: 0;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-/* line 35, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
+header h1 {
+  flex: 5;
+}
+/* line 48, ../sass/screen.scss */
 header a {
   color: #212121;
   text-decoration: none;
 }
 
-/* line 40, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 #link {
   display: flex;
 }
-/* line 42, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 #link li {
-  padding: 2px;
+  padding-left: 1rem;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 #convertBtn {
   background: none;
   border: 8px solid white;
@@ -123,18 +137,51 @@ header a {
   font-size: xx-large;
   padding: 2.4rem;
   color: white;
-  margin: 4vh auto;
+  margin: 16vh auto 4vh auto;
   display: block;
   transition: all 0.2s ease-in-out;
 }
 
-/* line 57, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 #convertBtn:hover, #convertBtn:active {
   background: white;
   color: #212121;
 }
 
-/* line 61, ../sass/screen.scss */
+/*==============================================
+Grid
+==============================================*/
+/* line 78, ../sass/screen.scss */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 0 1 auto;
+}
+
+/* line 84, ../sass/screen.scss */
+.col-6 {
+  flex-basis: 50%;
+  position: relative;
+}
+
+/* line 88, ../sass/screen.scss */
+.col-12 {
+  flex-basis: 100%;
+  position: relative;
+}
+
+/*==============================================
+Parts
+==============================================*/
+/* line 95, ../sass/screen.scss */
+.desc {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+/* line 100, ../sass/screen.scss */
 .lead {
   font-size: xx-large;
   color: white;
@@ -143,34 +190,7 @@ header a {
   padding-left: 1rem;
 }
 
-/* line 68, ../sass/screen.scss */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  flex: 0 1 auto;
-}
-
-/* line 74, ../sass/screen.scss */
-.col-6 {
-  flex-basis: 50%;
-  position: relative;
-}
-
-/* line 78, ../sass/screen.scss */
-.col-12 {
-  flex-basis: 100%;
-  position: relative;
-}
-
-/* line 82, ../sass/screen.scss */
-.desc {
-  text-align: center;
-  color: white;
-  padding: 2rem;
-}
-
-/* line 87, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 #toast {
   position: fixed;
   bottom: 5vh;
@@ -183,7 +203,25 @@ header a {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* line 98, ../sass/screen.scss */
+/*==============================================
+Utils
+==============================================*/
+/* line 122, ../sass/screen.scss */
 .hide {
   display: none;
+}
+
+/* line 123, ../sass/screen.scss */
+.right {
+  text-align: right;
+}
+
+/* line 124, ../sass/screen.scss */
+.left {
+  text-align: left;
+}
+
+/* line 125, ../sass/screen.scss */
+.center {
+  text-align: center;
 }
