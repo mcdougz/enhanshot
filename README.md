@@ -1,11 +1,11 @@
-# About
+# Enhanshot.js
 
 [![GitHub version](https://badge.fury.io/gh/KENJU%2Fenhanshot.svg)](http://badge.fury.io/gh/KENJU%2Fenhanshot) [![npm version](https://badge.fury.io/js/enhanshotjs.svg)](http://badge.fury.io/js/enhanshotjs)
 
 <a href="http://KENJU.github.io/enhanshot"><img src="img/screenshot.png" alt="threshold"></a>
 
 ## Index
-- [About](https://github.com/KENJU/enhanshot#about)
+- [Enhanhot.js](https://github.com/KENJU/enhanshot#enhanshotjs)
 - [Install](https://github.com/KENJU/enhanshot#install)
 	- [Download ZIP file](https://github.com/KENJU/enhanshot#download-zip-file)
 	- [Clone Github Repository](https://github.com/KENJU/enhanshot#clone-github-repository)

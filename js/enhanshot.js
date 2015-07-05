@@ -1,23 +1,28 @@
 Enhanshot = {};
 Enhanshot.process = function(img){
 
-	// effect set in dataset
-	var effect = img.dataset.effect;
+	var 
+		// canvas,
+		context,
+		pixels,
+		worker,
+		obj = {},
+		effect = img.dataset.effect
+	;
+
 	// create canvas
-	var canvas = document.createElement("canvas");
-	canvas.width = img.width;
-	canvas.height = img.height;
+	// canvas  = Enhanshot.getCanvas(img.width, img.height);
 
 	// get context reference
-	var context = canvas.getContext("2d");
-	// draw img onto canvas
-	context.drawImage(img, 0, 0);
+	// context = canvas.getContext("2d");
+	// // draw img onto canvas
+	// context.drawImage(img, 0, 0);
 	// extract pixels data
-	var pixels = context.getImageData(0, 0, img.width, img.height);
+	pixels = Enhanshot.getPixels(img);
 
 	// send the pixels to a worker thread
-	var worker = new Worker('js/worker.js');
-	var obj = { 
+	worker = new Worker('js/worker.js');
+	obj = { 
 		pixels: pixels,
 		effects: effect
 	}
@@ -25,16 +30,42 @@ Enhanshot.process = function(img){
 
 	// get message from the worker thread
 	worker.onmessage = function(e){
+		var new_pixels;
 		// debug
 		if (typeof e.data === "string"){
 			console.log("Worker: " + e.data)
 			return;
 		}
-
-		var new_pixels = e.data.pixels;
-		context.putImageData(new_pixels, 0, 0);
-		img.src = canvas.toDataURL();
+		new_pixels = e.data.pixels;
+		Enhanshot.renderCanvas(img, new_pixels);
 	}
+	return;
+};
+
+Enhanshot.getPixels = function(img) {
+	var canvas,
+			context
+	;
+	canvas = this.getCanvas(img.width, img.height);
+	context = canvas.getContext('2d');
+	context.drawImage(img, 0, 0);
+	return context.getImageData(0, 0, canvas.width, canvas.height);
+};
+
+Enhanshot.getCanvas = function(width, height) { 
+	var canvas = document.createElement('canvas');
+	canvas.width = width;
+	canvas.height = height;
+	return canvas;
+};
+
+Enhanshot.renderCanvas = function(img, new_pixels){
+	var canvas, context;
+	canvas  = Enhanshot.getCanvas(img.width, img.height);
+	context = canvas.getContext("2d");
+	context.putImageData(new_pixels, 0, 0);
+	img.src = canvas.toDataURL();
+	return;
 };
 
 Enhanshot.showToast = function(){
