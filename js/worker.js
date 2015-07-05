@@ -10,11 +10,12 @@ onmessage = function(e){
 // apply filter based on effect name
 Worker.process = function(imgd){
 	var
-		effect = imgd.effects, // effect name
-		pixraw = imgd.pixels, // context.getImageData()
-		pix = pixraw.data, // image data (pixels)
-		width = pixraw.width, // image width
-		height = pixraw.height; // image height
+		effect 	= imgd.effects,	// effect name
+		pixraw 	= imgd.pixels, 	// context.getImageData()
+		pix 		= pixraw.data, 	// image data (pixels)
+		width 	= pixraw.width, // image width
+		height 	= pixraw.height	// image height
+	;
 
 	importScripts(
 		'worker.filter.js',
@@ -49,7 +50,7 @@ Worker.process = function(imgd){
 			Worker.filter.threshold(pix);
 			break;
 		case 'brighten':
-			Worker.filter.brighten(pix, 10);
+			Worker.filter.brighten(pix, 100);
 			break;
 		case 'hueRotate':
 			Worker.filter.hueRotate(pix, 180); // 180 / 360 = 50%

@@ -1,6 +1,6 @@
 Worker.util = {};
 /*==============================================
-Utils
+Conversion between rgb & hsv
 ==============================================*/
 // http://axonflux.com/handy-rgb-to-hsl-and-rgb-to-hsv-color-model-c
 Worker.util.rgb2hsv = function(r, g, b){

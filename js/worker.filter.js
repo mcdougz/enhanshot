@@ -60,13 +60,13 @@ Worker.filter.mirrorHorizontal = function(pix, width, height){
 	// TODO: mirror horizontal alrgorithum
 };
 Worker.filter.opacity = function(pix){
-	console.log('***Opacity enhancement');
+	console.log('Opacity enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		pix[i+3] = pix[i+3] * .5;
 	}
 };
 Worker.filter.brighten = function(pix, value){
-	console.log('***Brighten enhancement');
+	console.log('Brighten enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		pix[i] += value;
 		pix[i+1] += value;
