@@ -16,45 +16,52 @@ Worker.process = function(imgd){
 		width = pixraw.width, // image width
 		height = pixraw.height; // image height
 
+	importScripts(
+		'worker.filter.js',
+		'worker.util.js'
+	);
 	switch(effect){
 		case 'enhance':
-			Enhanshot.filter.enhance(pix);
+			Worker.filter.enhance(pix);
 			break;
 		case 'grayscale':
-			Enhanshot.filter.grayscale(pix);
+			Worker.filter.grayscale(pix);
 			break;
 		case 'sepia':
-			Enhanshot.filter.sepia(pix);
+			Worker.filter.sepia(pix);
 			break;
 		case 'negaposi':
-			Enhanshot.filter.negaposi(pix);
+			Worker.filter.negaposi(pix);
 			break;
 		case 'blur':
-			Enhanshot.filter.blur(pix, width, height);
+			Worker.filter.blur(pix, width, height);
 			break;
 		case 'mirrorVertical':
-			Enhanshot.filter.mirrorVertical(pix, width, height);
+			Worker.filter.mirrorVertical(pix, width, height);
 			break;
 		case 'mirrorHorizontal':
-			Enhanshot.filter.mirrorHorizontal(pix, width, height);
+			Worker.filter.mirrorHorizontal(pix, width, height);
 			break;
 		case 'opacity':
-			Enhanshot.filter.opacity(pix);
+			Worker.filter.opacity(pix);
 			break;
 		case 'threshold':
-			Enhanshot.filter.threshold(pix);
+			Worker.filter.threshold(pix);
+			break;
+		case 'brighten':
+			Worker.filter.brighten(pix, 10);
 			break;
 		case 'hueRotate':
-			Enhanshot.filter.hueRotate(pix, 180); // 180 / 360 = 50%
+			Worker.filter.hueRotate(pix, 180); // 180 / 360 = 50%
 			break;
 		case 'saturate':
-			Enhanshot.filter.saturate(pix, 200); // 200 is 200%
+			Worker.filter.saturate(pix, 200); // 200 is 200%
 			break;
 		case 'contrast':
-			Enhanshot.filter.contrast(pix, 200); // 200 is 200%
+			Worker.filter.contrast(pix, 200); // 200 is 200%
 			break;
 		default:
-			Enhanshot.filter.enhance(pix);
+			Worker.filter.enhance(pix);
 			break;
 	}
 
@@ -62,3 +69,5 @@ Worker.process = function(imgd){
 
 	return imgd;
 };
+
+

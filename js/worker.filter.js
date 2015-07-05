@@ -1,11 +1,11 @@
-Enhanshot.filter = {};
+Worker.filter = {};
 
 /*==============================================
 Effects
 ==============================================*/
 
 // basic filter for enhancing photos
-Enhanshot.filter.enhance = function(pix){
+Worker.filter.enhance = function(pix){
 	console.log('Basic enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		pix[i] = pix[i] * 1.24; // red
@@ -14,7 +14,7 @@ Enhanshot.filter.enhance = function(pix){
 	}
 };
 // grayscale
-Enhanshot.filter.grayscale = function(pix){
+Worker.filter.grayscale = function(pix){
 	console.log('Grayscale enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		// calculated from NTSC
@@ -25,7 +25,7 @@ Enhanshot.filter.grayscale = function(pix){
 	}
 };
 
-Enhanshot.filter.sepia = function(pix){
+Worker.filter.sepia = function(pix){
 	console.log('Sepia enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		pix[i] = pix[i] * 1.07;
@@ -34,7 +34,7 @@ Enhanshot.filter.sepia = function(pix){
 	}
 };
 
-Enhanshot.filter.negaposi = function(pix){
+Worker.filter.negaposi = function(pix){
 	console.log('Nega-Posi enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		pix[i] = 255 - pix[i];
@@ -42,11 +42,11 @@ Enhanshot.filter.negaposi = function(pix){
 		pix[i+2] = 255 - pix[i+2];
 	}
 };
-Enhanshot.filter.blur = function(pix, width, height){
+Worker.filter.blur = function(pix, width, height){
 	console.log('Blur enhancement');
 	// TODO: blur alrgorithum
 };
-Enhanshot.filter.mirrorVertical = function(pix, width, height){
+Worker.filter.mirrorVertical = function(pix, width, height){
 	console.log('Mirror Horizontal enhancement');
 	var array = [];
 	for(var i = 0; i < height; i++){
@@ -55,28 +55,28 @@ Enhanshot.filter.mirrorVertical = function(pix, width, height){
 		}
 	}
 };
-Enhanshot.filter.mirrorHorizontal = function(pix, width, height){
+Worker.filter.mirrorHorizontal = function(pix, width, height){
 	console.log('Mirror Vertical enhancement');
 	// TODO: mirror horizontal alrgorithum
 };
-Enhanshot.filter.opacity = function(pix){
-	console.log('Opacity enhancement');
+Worker.filter.opacity = function(pix){
+	console.log('***Opacity enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		pix[i+3] = pix[i+3] * .5;
 	}
 };
-Enhanshot.filter.brighten = function(pix){
-	console.log('Brighten enhancement');
+Worker.filter.brighten = function(pix, value){
+	console.log('***Brighten enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
-		pix[i] += 10;
-		pix[i+1] += 10;
-		pix[i+2] += 10;
+		pix[i] += value;
+		pix[i+1] += value;
+		pix[i+2] += value;
 	}
 };
 // calculte for each pixels.
 // if the pixel's rgb is higher than threshold return black
 // otherwise return white
-Enhanshot.filter.threshold = function(pix){
+Worker.filter.threshold = function(pix){
 	console.log('Threshold enhancement');
 	var
 		red,
@@ -98,34 +98,34 @@ Enhanshot.filter.threshold = function(pix){
 		pix[i+2] = new_value;
 	}
 };
-Enhanshot.filter.hueRotate = function(pix, num){
+Worker.filter.hueRotate = function(pix, num){
 	console.log('Hue Rotate enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		// change from rgb to hsv
-		var hsv = Enhanshot.util.rgb2hsv(pix[i], pix[i+1], pix[i+2]);
+		var hsv = Worker.util.rgb2hsv(pix[i], pix[i+1], pix[i+2]);
 		hsv[0] = hsv[0] * num / 360; // hue is from 0 to 360
-		var rgb = Enhanshot.util.hsv2rgb(hsv[0], hsv[1], hsv[2]);
+		var rgb = Worker.util.hsv2rgb(hsv[0], hsv[1], hsv[2]);
 		pix[i] = rgb[0];
 		pix[i+1] = rgb[1];
 		pix[i+2] = rgb[2];
 	}
 }
-Enhanshot.filter.saturate = function(pix, num){
+Worker.filter.saturate = function(pix, num){
 	console.log('Saturate enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 		// change from rgb to hsv
-		var hsv = Enhanshot.util.rgb2hsv(pix[i], pix[i+1], pix[i+2]); // return array
+		var hsv = Worker.util.rgb2hsv(pix[i], pix[i+1], pix[i+2]); // return array
 		// change saturation
 		hsv[1] = hsv[1] * num / 100; // saturation is from 0 to 100
 		// convert from hsv to rgb
-		var rgb = Enhanshot.util.hsv2rgb(hsv[0], hsv[1], hsv[2]);
+		var rgb = Worker.util.hsv2rgb(hsv[0], hsv[1], hsv[2]);
 		pix[i] = rgb[0];
 		pix[i+1] = rgb[1];
 		pix[i+2] = rgb[2];
 	}
 };
 // see: http://www.w3.org/TR/AERT#color
-Enhanshot.filter.contrast = function(pix, num){
+Worker.filter.contrast = function(pix, num){
 	console.log('Contrast enhancement');
 	for (var i = 0, n = pix.length; i < n; i += 4){
 	}

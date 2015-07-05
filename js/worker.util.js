@@ -1,9 +1,9 @@
-Enhanshot.util = {};
+Worker.util = {};
 /*==============================================
 Utils
 ==============================================*/
 // http://axonflux.com/handy-rgb-to-hsl-and-rgb-to-hsv-color-model-c
-Enhanshot.util.rgb2hsv = function(r, g, b){
+Worker.util.rgb2hsv = function(r, g, b){
 	r = r/255;
 	g = g/255;
 	b = b/255;
@@ -37,7 +37,7 @@ Enhanshot.util.rgb2hsv = function(r, g, b){
 
 	return [h, s, v];
 };
-Enhanshot.util.hsv2rgb = function(h, s, v){
+Worker.util.hsv2rgb = function(h, s, v){
 	var r; // red
 	var g; // green
 	var b; // blue
