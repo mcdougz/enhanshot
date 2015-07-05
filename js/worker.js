@@ -4,11 +4,11 @@ Basic
 Worker = {};
 // get message from worker in enhanshot.js
 onmessage = function(e){
-	postMessage(Worker.filter(e.data))
+	postMessage(Worker.process(e.data))
 };
 
 // apply filter based on effect name
-Worker.filter = function(imgd){
+Worker.process = function(imgd){
 	var
 		effect = imgd.effects, // effect name
 		pixraw = imgd.pixels, // context.getImageData()

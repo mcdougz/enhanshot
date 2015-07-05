@@ -9,7 +9,7 @@ Enhanshot.process = function(img){
 	;
 
 	// extract pixels data
-	pixels = Enhanshot.getPixels(img);
+	pixels = Enhanshot.canvas.getPixels(img);
 
 	// send the pixels to a worker thread
 	worker = new Worker('js/worker.js');
@@ -26,34 +26,8 @@ Enhanshot.process = function(img){
 			console.log("Worker: " + e.data)
 			return;
 		}
-		Enhanshot.renderCanvas(img, e.data.pixels);
+		Enhanshot.canvas.renderCanvas(img, e.data.pixels);
 	}
-	return;
-};
-
-Enhanshot.getPixels = function(img) {
-	var canvas,
-			context
-	;
-	canvas = this.getCanvas(img.width, img.height);
-	context = canvas.getContext('2d');
-	context.drawImage(img, 0, 0);
-	return context.getImageData(0, 0, canvas.width, canvas.height);
-};
-
-Enhanshot.getCanvas = function(width, height) {
-	var canvas = document.createElement('canvas');
-	canvas.width = width;
-	canvas.height = height;
-	return canvas;
-};
-
-Enhanshot.renderCanvas = function(img, new_pixels){
-	var canvas, context;
-	canvas  = Enhanshot.getCanvas(img.width, img.height);
-	context = canvas.getContext("2d");
-	context.putImageData(new_pixels, 0, 0);
-	img.src = canvas.toDataURL();
 	return;
 };
 
