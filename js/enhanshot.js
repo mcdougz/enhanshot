@@ -1,8 +1,6 @@
 Enhanshot = {};
 Enhanshot.process = function(img){
-
-	var 
-		// canvas,
+	var
 		context,
 		pixels,
 		worker,
@@ -10,34 +8,25 @@ Enhanshot.process = function(img){
 		effect = img.dataset.effect
 	;
 
-	// create canvas
-	// canvas  = Enhanshot.getCanvas(img.width, img.height);
-
-	// get context reference
-	// context = canvas.getContext("2d");
-	// // draw img onto canvas
-	// context.drawImage(img, 0, 0);
 	// extract pixels data
 	pixels = Enhanshot.getPixels(img);
 
 	// send the pixels to a worker thread
 	worker = new Worker('js/worker.js');
-	obj = { 
+	obj = {
 		pixels: pixels,
 		effects: effect
-	}
+	};
 	worker.postMessage(obj);
 
 	// get message from the worker thread
 	worker.onmessage = function(e){
-		var new_pixels;
 		// debug
 		if (typeof e.data === "string"){
 			console.log("Worker: " + e.data)
 			return;
 		}
-		new_pixels = e.data.pixels;
-		Enhanshot.renderCanvas(img, new_pixels);
+		Enhanshot.renderCanvas(img, e.data.pixels);
 	}
 	return;
 };
@@ -52,7 +41,7 @@ Enhanshot.getPixels = function(img) {
 	return context.getImageData(0, 0, canvas.width, canvas.height);
 };
 
-Enhanshot.getCanvas = function(width, height) { 
+Enhanshot.getCanvas = function(width, height) {
 	var canvas = document.createElement('canvas');
 	canvas.width = width;
 	canvas.height = height;
@@ -82,4 +71,3 @@ $('#convertBtn').on('click', function(e){
 	});
 	Enhanshot.showToast();
 });
-
