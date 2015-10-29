@@ -135,7 +135,7 @@ And then, please add `data-effect="???"` attribute to the same img tag.
 
 ### Default
 
-In default, any elements whose id name is `convertBtn` would trigger convert action. Therefore, add `<button>` or `<a>` with id name `converBtn`.
+In default, any elements whose id name is `convertBtn` would trigger convert action. Therefore, add `<button>` or `<a>` with id name `convertBtn`.
 
 ```html
 
@@ -147,7 +147,7 @@ In default, any elements whose id name is `convertBtn` would trigger convert act
 ```js
 
 $('#convertBtn').on('click', function(e){
-	Array.prototype.forEach.call(document.querySelectorAll('.row-right img'), function(node){
+	Array.prototype.forEach.call(document.querySelectorAll('img'), function(node){
 		process(node);
 	});
 });
