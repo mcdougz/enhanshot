@@ -135,7 +135,7 @@ And then, please add `data-effect="???"` attribute to the same img tag.
 
 ### Default
 
-In default, any elements whose id name is `convertBtn` would trigger convert action. Therefore, add `<button>` or `<a>` with id name `convertBtn`.
+By default, all elements with the id `convertBtn` would trigger the convert action. Therefore, add a `<button>` or `<a>` element with the id `convertBtn`.
 
 ```html
 
@@ -147,7 +147,7 @@ In default, any elements whose id name is `convertBtn` would trigger convert act
 ```js
 
 $('#convertBtn').on('click', function(e){
-	Array.prototype.forEach.call(document.querySelectorAll('img'), function(node){
+	Array.prototype.forEach.call(document.querySelectorAll('.convert-img'), function(node){
 		process(node);
 	});
 });
@@ -189,7 +189,7 @@ var blue = green * 1.21;
 
 ### grayscale
 
-Make images to grayscale tone. Processing altorhitm is based on NTSC. For the detail please see the [Wiki page about Grayscale, "Luma coding in video systems"](http://en.wikipedia.org/wiki/Grayscale).
+Make images to grayscale tone. Processing algorithm is based on NTSC. For the details please see the [Wiki page about Grayscale, "Luma coding in video systems"](http://en.wikipedia.org/wiki/Grayscale).
 
 #### Usage
 
@@ -236,7 +236,7 @@ var blue = green * .43;
 
 ### Negative-Positive
 
-In negative-positive effect, each rgb values are simply converted.
+For the negative-positive effect, each rgb value is simply inverted.
 
 #### Usage
 
